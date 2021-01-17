@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <div class="d-flex justify-content-bettwen align-content-center" style="margin: 10px;">
+        <span>{{indice + 1}}/{{questions.length || ""}} | {{tiempo || "00:00:00"}}</span>
+        <span>
+          <a href="#" (click)="cancelar($event)" class="d-flex justify-content-center align-content-center"> Salir 
+             <ion-icon style="font-size: 1.5rem;margin-left: 5px;" name="exit-outline"></ion-icon>
+          </a>
+        </span>
+      </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="center">
+  <div class="d-flex justify-content-center align-content-center" style="flex-direction: column; padding: 10px;">     
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{question.tipo_materia}}</ion-card-title>
+          <ion-card-subtitle>Categoria: {{question.categoria}}</ion-card-subtitle>
+        </ion-card-header>      
+        <ion-card-content>
+          {{question.tema}}
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Seleccione una altenativa</ion-card-subtitle>
+          <ion-card-title>{{question.descripcion}}</ion-card-title>
+          <ion-card-title class="d-flex justify-content-center align-content-center" [*ngIf]="question.images[0]"><img src="{{uri_base}}/{{question.images[0]}}" alt=""></ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-radio-group (ionChange)="contestando($event)" allow-empty-selection="true">
+              <ion-item>
+                <ion-label class="ion-text-wrap">{{question.alternativas[0] || ""}}</ion-label>
+                <ion-radio value="a"></ion-radio>
+              </ion-item>
+              <hr style="background-color: gray;">
+              <ion-item>
+                <ion-label class="ion-text-wrap">{{question.alternativas[1] || ""}}</ion-label>
+                <ion-radio value="b"></ion-radio>
+              </ion-item>
+              <hr style="background-color: gray;">
+              <ion-item>
+                <ion-label class="ion-text-wrap">{{question.alternativas[2] || ""}}</ion-label>
+                <ion-radio value="c"></ion-radio>
+              </ion-item>
+              <hr style="background-color: gray;">
+              <ion-item>
+                <ion-label class="ion-text-wrap">{{question.alternativas[3] || ""}}</ion-label>
+                <ion-radio value="d"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-button style="margin: 10px;" (click)="validar()">
+        Siguiente
+      </ion-button>
+  </div>
+</ion-content>

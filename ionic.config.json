@@ -1,0 +1,7 @@
+{
+  "name": "angular-flask",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

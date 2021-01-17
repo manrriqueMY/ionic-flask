@@ -1,0 +1,16 @@
+/* DOES NOT WORK - not specific enough */
+ion-loading {
+  color: green;
+}
+
+/* Works - pass "loading-class" in cssClass to increase specificity */
+.loading-class {
+  color: green;
+}
+
+.loading-class {
+  --background: #222;
+  --spinner-color: #fff;
+
+  color: #fff;
+}

@@ -1,0 +1,31 @@
+<ion-content class="center">
+  <div class="d-flex justify-content-center align-content-center">
+    <form action="#" (submit)="registrarse($event)" class="card">
+        <div class="d-flex justify-content-center align-content-center">
+          <ion-icon class="icon-login" name="person-add-outline"></ion-icon>          
+        </div>
+        <div>{{error}}</div>
+        <ion-item>
+          <ion-label position="floating">Username</ion-label>
+          <ion-input
+            name="username"
+            (ionInput)="teclado($event)"
+            required
+            value="{{ credentials.username }}"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input
+            name="password"
+            (ionInput)="teclado($event)"
+            required
+            type="password"
+            value="{{ credentials.password }}"
+          ></ion-input>
+        </ion-item>
+        <ion-button size="large" color="primary" type="submit"> Registrarse </ion-button>        
+        <a href="#" (click)="loggearse($event)">loguearse</a>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="d-flex justify-content-bettwen align-content-center" style="margin: 10px;">
+      <span>Tabla de Líderes</span>
+      <span>
+        <a href="#" (click)="cancelar($event)" class="d-flex justify-content-center align-content-center"> Salir
+          <ion-icon style="font-size: 1.5rem;margin-left: 5px;" name="exit-outline"></ion-icon>
+        </a>
+      </span>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="center">
+  <div class="d-flex justify-content-center align-content-center">
+    <div class="card">
+      <ion-list>
+        <ion-item *ngFor='let leads of leaderboard, let i = index'>
+          <div style="display: flex; justify-content: space-between; width: 100%;border-bottom: 1px solid gray; padding: 10px 0;">
+            <div style="display: flex; align-items: center;">
+              <ion-badge color="primary" style="margin-right: 5px;">{{i +1 }}</ion-badge> {{leads['username'] || ""}}
+            </div>
+            <div style="display: flex; justify-content: center; flex-direction: column;">
+              <span>Puntuación: {{(leads['puntuacion'] + "") || ""}}</span>
+              <span>{{leads['tiempo'] || ""}}</span>
+            </div>
+          </div>
+        </ion-item>        
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

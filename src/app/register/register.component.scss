@@ -1,0 +1,22 @@
+.d-flex {
+  display: flex;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.align-content-center {
+  align-content: center;
+}
+
+.card {
+  width: 80%;
+  max-width: 600px;
+  height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  overflow: auto;
+}
+.icon-login {
+  font-size: 128px;
+}

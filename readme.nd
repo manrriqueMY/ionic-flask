@@ -1,0 +1,8 @@
+keystore: angular_flask
+
+api: uri_base = "https://flask-angulas.herokuapp.com";
+api: uri_api = "https://flask-angulas.herokuapp.com/api/v1";
+
+repositorio: backend https://github.com/manrriqueMY/flask.git
+
+google play: https://play.google.com/store/apps/details?id=io.ionic.angular_flask
